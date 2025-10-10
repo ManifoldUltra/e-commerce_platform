@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘多多 - 优质电商平台</title>
+    <!-- 使用Thymeleaf语法引用CSS -->
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<!-- 顶部导航栏 -->
+<div class="top-nav">
+    <div class="container">
+        <div class="top-nav-left">
+            <a th:text="${C1.name}" href="#">，欢迎</a>
+            <a href="#">免费注册</a>
+            <a href="#">手机逛淘多多</a>
+        </div>
+        <div class="top-nav-right">
+            <a href="#">我的订单</a>
+            <a href="#">我的淘多多</a>
+            <a href="#">购物车</a>
+            <a href="#">收藏夹</a>
+            <a href="#">商家中心</a>
+            <a href="#">客户服务</a>
+        </div>
+    </div>
+</div>
+
+<!-- 头部区域 -->
+<header class="header">
+    <div class="container">
+        <div class="logo">淘多多</div>
+        <div class="search-box">
+            <div class="search-category">全部商品</div>
+            <input type="text" class="search-input" placeholder="请输入搜索关键词">
+            <button class="search-btn">搜索</button>
+        </div>
+        <div class="cart">
+            <span class="cart-icon">🛒</span>
+            购物车
+        </div>
+    </div>
+</header>
+
+<!-- 主导航菜单 -->
+<nav class="main-nav">
+    <div class="container">
+        <div class="all-categories">
+            全部商品分类
+            <ul class="categories-menu">
+                <li>女装 / 内衣</li>
+                <li>男装 / 运动户外</li>
+                <li>美妆 / 个护清洁</li>
+                <li>手机 / 数码</li>
+                <li>电脑 / 办公</li>
+                <li>家具 / 家装</li>
+                <li>母婴 / 玩具</li>
+                <li>食品 / 生鲜</li>
+                <li>医药保健</li>
+                <li>图书 / 文娱</li>
+            </ul>
+        </div>
+        <ul class="nav-items">
+            <li>首页</li>
+            <li>今日爆款</li>
+            <li>天猫超市</li>
+            <li>淘鲜达</li>
+            <li>电器城</li>
+            <li>医药馆</li>
+            <li>营业厅</li>
+            <li>魅力惠</li>
+            <li>飞猪旅行</li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 轮播图区域 -->
+<div class="banner">
+    <div class="banner-slider">
+        <div class="slide slide1 active">
+            <div class="slide-content">
+                <h2>618大促火热进行中</h2>
+                <p>全场满300减40，上不封顶</p>
+            </div>
+        </div>
+        <div class="slide slide2">
+            <div class="slide-content">
+                <h2>品牌旗舰店特惠</h2>
+                <p>大牌直降，品质保障</p>
+            </div>
+        </div>
+        <div class="slide slide3">
+            <div class="slide-content">
+                <h2>新品首发</h2>
+                <p>抢先体验，限时优惠</p>
+            </div>
+        </div>
+    </div>
+    <div class="banner-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</div>
+
+<!-- 商品展示区 -->
+<div class="container">
+    <div class="products-section">
+        <div class="section-title">热门推荐</div>
+        <div class="products-grid">
+            <!-- 商品1 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">2023夏季新款女装连衣裙修身显瘦气质长裙</div>
+                    <div class="product-price">¥199.00</div>
+                    <div class="product-sales">已售2.3万件</div>
+                </div>
+            </div>
+
+            <!-- 商品2 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">苹果iPhone 14 Pro Max 5G手机 全网通</div>
+                    <div class="product-price">¥8999.00</div>
+                    <div class="product-sales">已售1.5万件</div>
+                </div>
+            </div>
+
+            <!-- 商品3 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">海尔冰箱双开门家用大容量风冷无霜</div>
+                    <div class="product-price">¥3299.00</div>
+                    <div class="product-sales">已售8千件</div>
+                </div>
+            </div>
+
+            <!-- 商品4 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">李宁运动鞋男鞋2023新款透气跑步鞋</div>
+                    <div class="product-price">¥299.00</div>
+                    <div class="product-sales">已售5.6万件</div>
+                </div>
+            </div>
+
+            <!-- 商品5 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">SK-II神仙水护肤精华露230ml</div>
+                    <div class="product-price">¥1540.00</div>
+                    <div class="product-sales">已售3.2万件</div>
+                </div>
+            </div>
+
+            <!-- 商品6 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">联想笔记本电脑轻薄本15.6英寸</div>
+                    <div class="product-price">¥4999.00</div>
+                    <div class="product-sales">已售1.8万件</div>
+                </div>
+            </div>
+
+            <!-- 商品7 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">欧莱雅男士洗面奶控油祛痘洁面乳</div>
+                    <div class="product-price">¥39.90</div>
+                    <div class="product-sales">已售12万件</div>
+                </div>
+            </div>
+
+            <!-- 商品8 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">三只松鼠坚果大礼包节日送礼礼盒</div>
+                    <div class="product-price">¥128.00</div>
+                    <div class="product-sales">已售15万件</div>
+                </div>
+            </div>
+
+            <!-- 商品9 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">小米手环7智能手环运动监测心率血氧</div>
+                    <div class="product-price">¥249.00</div>
+                    <div class="product-sales">已售25万件</div>
+                </div>
+            </div>
+
+            <!-- 商品10 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">阿迪达斯运动短袖T恤男夏季速干透气</div>
+                    <div class="product-price">¥159.00</div>
+                    <div class="product-sales">已售7.3万件</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products-section">
+        <div class="section-title">猜你喜欢</div>
+        <div class="products-grid">
+            <!-- 猜你喜欢商品列表 -->
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">夏季新款男士短裤休闲宽松五分裤</div>
+                    <div class="product-price">¥89.00</div>
+                    <div class="product-sales">已售3.2万件</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">商品图片</div>
+                <div class="product-info">
+                    <div class="product-title">华为FreeBuds 4i无线蓝牙耳机</div>
+                    <div class="product-price">¥399.00</div>
+                    <div class="product-sales">已售5.6万件</div>
+                </div>
+            </div>
+
+            <!-- 其他猜你喜欢商品... -->
+        </div>
+    </div>
+</div>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>购物指南</h3>
+                <ul>
+                    <li>购物流程</li>
+                    <li>会员介绍</li>
+                    <li>联系客服</li>
+                    <li>常见问题</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>配送方式</h3>
+                <ul>
+                    <li>上门自提</li>
+                    <li>配送服务查询</li>
+                    <li>配送费收取标准</li>
+                    <li>海外配送</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>支付方式</h3>
+                <ul>
+                    <li>货到付款</li>
+                    <li>在线支付</li>
+                    <li>分期付款</li>
+                    <li>邮局汇款</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>售后服务</h3>
+                <ul>
+                    <li>售后政策</li>
+                    <li>价格保护</li>
+                    <li>退款说明</li>
+                    <li>返修/退换货</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>特色服务</h3>
+                <ul>
+                    <li>夺宝岛</li>
+                    <li>DIY装机</li>
+                    <li>延保服务</li>
+                    <li>淘多多E卡</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © 2025 XXXX 版权所有</p>
+            <p>增值电信业务经营许可证：XXX-2025XXXX | X公网安备 XXXXXXXXXXXXXX号</p>
+        </div>
+    </div>
+</footer>
+
+<!-- 使用Thymeleaf语法引用JS -->
+<script th:src="@{/js/home.js}"></script>
+</body>
+</html>

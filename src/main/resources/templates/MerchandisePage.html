@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情页</title>
+    <link rel="stylesheet" th:href="@{/css/MerchandisePage.css}">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="logo">淘多多</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="product-container">
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="" alt="商品主图" id="mainImg">
+            </div>
+            <div class="thumbnails" id="thumbnailsContainer">
+                <!-- 缩略图将由JavaScript动态生成 -->
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1 class="product-title" id="productTitle"></h1>
+
+            <div class="product-price">
+                <span class="price-label">价格</span>
+                <span class="price" id="productPrice"></span>
+            </div>
+
+            <div class="sales-info">
+                <span id="salesCount"></span>
+                <span id="reviewCount"></span>
+                <span id="favoriteCount"></span>
+            </div>
+
+            <div class="spec-selector">
+                <!-- 规格选项将由JavaScript动态生成 -->
+            </div>
+
+            <div class="quantity-selector">
+                <div class="quantity-label">数量</div>
+                <button class="quantity-btn" id="decrease">-</button>
+                <input type="text" class="quantity-input" value="1" id="quantity">
+                <button class="quantity-btn" id="increase">+</button>
+            </div>
+
+            <div class="action-buttons">
+                <button class="buy-now">立即购买</button>
+                <button class="add-cart">加入购物车</button>
+            </div>
+
+            <div class="service-info">
+                <!-- 服务信息将由JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <div class="detail-tabs">
+        <div class="tab-headers">
+            <div class="tab-header active" data-tab="details">商品详情</div>
+            <div class="tab-header" data-tab="specs">规格参数</div>
+            <div class="tab-header" data-tab="service">售后保障</div>
+        </div>
+        <div class="tab-content">
+            <!-- 商品详情内容将由JavaScript动态生成 -->
+        </div>
+    </div>
+
+    <div class="evaluation">
+        <div class="evaluation-title" id="evaluationTitle"></div>
+
+        <div class="evaluation-summary">
+            <div class="rating-score">
+                <div class="score" id="ratingScore"></div>
+                <div>综合评分</div>
+            </div>
+
+            <div class="rating-tags" id="ratingTags">
+                <!-- 评价标签将由JavaScript动态生成 -->
+            </div>
+        </div>
+
+        <div class="evaluation-list" id="evaluationList">
+            <!-- 评价列表将由JavaScript动态生成 -->
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p>© 2025 XXXX 版权所有</p>
+    </div>
+</div>
+
+<script th:src="@{js/product-data.js}"></script>
+<script th:src="@{js/script.js}"></script>
+</body>
+</html>
