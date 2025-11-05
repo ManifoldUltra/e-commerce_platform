@@ -1,4 +1,4 @@
-package com.example.ecommerce_platform;
+package com.example.ecommerce_platform.entity;
 
 //商品类
 public class Merchandise {

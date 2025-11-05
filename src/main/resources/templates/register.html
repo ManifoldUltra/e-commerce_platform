@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京里多多 - 注册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 350px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo h1 {
+            color: #ff5000;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo p {
+            color: #999;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .tab.active {
+            color: #ff5000;
+            border-bottom: 2px solid #ff5000;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #ff5000;
+            outline: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            background-color: #ff5000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 0;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #ff4400;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .options a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .options a:hover {
+            color: #ff5000;
+        }
+
+        .qrcode-login {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .qrcode-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .qrcode-btn:hover {
+            color: #ff5000;
+        }
+
+        .qrcode-btn i {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer a:hover {
+            color: #ff5000;
+        }
+
+        .qrcode-container {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .qrcode-container.active {
+            display: block;
+        }
+
+        .qrcode-img {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .qrcode-tip {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .qrcode-image {
+            width: 120%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <h1>京里多多网</h1>
+        <p>淘金！我喜欢</p>
+    </div>
+
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input type="text" id="username" class="form-control" name="username" placeholder="请输入用户名" required>
+            <!--                <input type="text" class="form-control" placeholder="会员名/邮箱/手机号">-->
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" class="form-control" name="password" placeholder="请输入密码" required>
+            <!--                <input type="password" class="form-control" placeholder="密码">-->
+        </div>
+        <button  type="submit" class="login-btn">注册</button>
+
+    </form>
+
+
+    <div class="options">
+        <a href="#">忘记密码</a>
+        <a href="login">登录</a>
+    </div>
+
+    <div class="footer">
+        <a href="#">阿巴阿巴集团</a> |
+        <a href="#">阿巴阿巴国际站</a> |
+        <a href="#">阿巴阿巴中国站</a> |
+        <a href="#">全球速卖通</a>
+    </div>
+</div>
+
+</body>
+</html>

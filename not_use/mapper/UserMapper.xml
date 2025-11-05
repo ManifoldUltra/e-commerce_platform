@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.example.ecommerce_platform.mapper.UserMapper">
+    <!-- 查询全部顾客 -->
+    <select id="queryCustomer" resultType="com.example.ecommerce_platform.entity.Customer">
+        select * from Customers
+    </select>
+    <!-- 按照ID查询 -->
+    <select id="queryCustomerId" parameterType="int" resultType="com.example.ecommerce_platform.entity.Customer">
+        select * from Customers  where id=#{id}
+    </select>
+
+    <!-- 删除顾客 -->
+    <delete id="deleteCustomer" parameterType="com.example.ecommerce_platform.entity.Customer">
+        delete  Customers  where id=#{id}
+    </delete>
+
+</mapper>
+
