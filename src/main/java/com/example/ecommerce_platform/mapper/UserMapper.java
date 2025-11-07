@@ -25,8 +25,8 @@ public interface UserMapper{
 
     // 新增：插入顾客用于测试
     @Insert("INSERT INTO Customers(id, name, password) VALUES(#{id}, #{name}, #{password})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
-    Customer insertCustomer(Customer customer);
+//    @Options(useGeneratedKeys = true, keyProperty = "id")
+    int insertCustomer(Customer customer);
     // 新增：更新顾客
     @Update("UPDATE Customers SET name=#{name}, password=#{password} WHERE id=#{id}")
     void updateCustomer(Customer customer);

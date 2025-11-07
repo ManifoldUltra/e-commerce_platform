@@ -72,9 +72,9 @@ public class TestController {
     @PostMapping("/register")
 
     @ResponseBody
-    public String register(Customer customer) {
+    public Result register(Customer customer) {
         Customer e = customerService2.register(customer);
         System.out.println(customer);
-        return e != null ? "注册成功" : "错误";
+        return e != null ? Result.success() : Result.error("错误");
     }
 }

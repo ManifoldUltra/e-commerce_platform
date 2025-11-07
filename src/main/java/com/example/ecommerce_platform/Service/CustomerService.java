@@ -20,8 +20,9 @@ public class CustomerService {
         int id=sum+1;
         System.out.println(id);
         customer.setId(id);
-        Customer e = UserMapper.insertCustomer(customer);
-        System.out.println(e);
+        int line = UserMapper.insertCustomer(customer);
+        System.out.println(line);
+        Customer e=UserMapper.findCustomerById(line);
         return e;
     }
 }
