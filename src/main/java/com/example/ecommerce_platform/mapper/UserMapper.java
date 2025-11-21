@@ -1,7 +1,6 @@
 package com.example.ecommerce_platform.mapper;
 
 import com.example.ecommerce_platform.entity.Customer;
-import com.example.ecommerce_platform.pojo.Emp;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

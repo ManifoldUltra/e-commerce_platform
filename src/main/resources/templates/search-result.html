@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>搜索结果 - 京里多多</title>
+    <!-- 使用Thymeleaf语法引用CSS -->
     <link rel="stylesheet" th:href="@{/css/search.css}">
 </head>
 <body>
@@ -32,7 +33,7 @@
         <div class="logo">京里多多</div>
         <div class="search-box">
             <div class="search-category">全部商品</div>
-            <input type="text" class="search-input" id="searchInput" placeholder="请输入搜索关键词" value="手机">
+            <input type="text" class="search-input" id="searchInput" placeholder="请输入搜索关键词">
             <button class="search-btn" id="searchBtn">搜索</button>
         </div>
         <div class="cart">
@@ -80,7 +81,7 @@
         <span>当前位置：</span>
         <a href="#">首页</a>
         <span>&gt;</span>
-        <span class="current">搜索"手机"</span>
+        <span class="current" id="breadcrumbText">搜索结果</span>
     </div>
 </div>
 
@@ -91,18 +92,23 @@
         <div class="filter-section">
             <div class="filter-title">筛选条件</div>
             <div class="filter-groups">
+                <!-- 分类筛选 -->
                 <div class="filter-group">
-                    <div class="filter-name">品牌</div>
-                    <div class="filter-options">
-                        <label><input type="checkbox" name="brand" value="apple"> 苹果</label>
-                        <label><input type="checkbox" name="brand" value="huawei"> 华为</label>
-                        <label><input type="checkbox" name="brand" value="xiaomi"> 小米</label>
-                        <label><input type="checkbox" name="brand" value="oppo"> OPPO</label>
-                        <label><input type="checkbox" name="brand" value="vivo"> VIVO</label>
-                        <label><input type="checkbox" name="brand" value="samsung"> 三星</label>
+                    <div class="filter-name">商品分类</div>
+                    <div class="filter-options" id="categoryFilter">
+                        <!-- 动态加载分类 -->
                     </div>
                 </div>
 
+                <!-- 品牌筛选 -->
+                <div class="filter-group">
+                    <div class="filter-name">品牌</div>
+                    <div class="filter-options" id="brandFilter">
+                        <!-- 动态加载品牌 -->
+                    </div>
+                </div>
+
+                <!-- 价格筛选 -->
                 <div class="filter-group">
                     <div class="filter-name">价格</div>
                     <div class="filter-options">
@@ -114,27 +120,6 @@
                         <label><input type="checkbox" name="price" value="5000-"> 5000元以上</label>
                     </div>
                 </div>
-
-                <div class="filter-group">
-                    <div class="filter-name">内存</div>
-                    <div class="filter-options">
-                        <label><input type="checkbox" name="memory" value="64"> 64GB</label>
-                        <label><input type="checkbox" name="memory" value="128"> 128GB</label>
-                        <label><input type="checkbox" name="memory" value="256"> 256GB</label>
-                        <label><input type="checkbox" name="memory" value="512"> 512GB</label>
-                        <label><input type="checkbox" name="memory" value="1024"> 1TB</label>
-                    </div>
-                </div>
-
-                <div class="filter-group">
-                    <div class="filter-name">屏幕尺寸</div>
-                    <div class="filter-options">
-                        <label><input type="checkbox" name="screen" value="5-5.5"> 5.0-5.5英寸</label>
-                        <label><input type="checkbox" name="screen" value="5.5-6"> 5.5-6.0英寸</label>
-                        <label><input type="checkbox" name="screen" value="6-6.5"> 6.0-6.5英寸</label>
-                        <label><input type="checkbox" name="screen" value="6.5-"> 6.5英寸以上</label>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -144,16 +129,14 @@
             <div class="sort-options">
                 <div class="sort-title">排序：</div>
                 <div class="sort-item active" data-sort="default">综合</div>
-                <div class="sort-item" data-sort="sales">销量</div>
-                <div class="sort-item" data-sort="price-asc">价格从低到高</div>
-                <div class="sort-item" data-sort="price-desc">价格从高到低</div>
-                <div class="sort-item" data-sort="new">新品</div>
-                <div class="sort-item" data-sort="rating">评价</div>
+                <div class="sort-item" data-sort="price_asc">价格从低到高</div>
+                <div class="sort-item" data-sort="price_desc">价格从高到低</div>
+                <div class="sort-item" data-sort="update_time">新品</div>
             </div>
 
             <!-- 搜索结果统计 -->
             <div class="results-info">
-                找到 <span class="results-count">156</span> 件商品
+                找到 <span class="results-count" id="productCount">0</span> 件商品
             </div>
 
             <!-- 搜索结果列表 -->
@@ -161,29 +144,14 @@
                 <!-- 商品卡片将由JavaScript动态生成 -->
             </div>
 
+            <!-- 加载状态 -->
+            <div id="loading" class="loading-spinner">
+                <p>正在加载商品...</p>
+            </div>
+
             <!-- 分页控件 -->
-            <div class="pagination">
-                <div class="page-item disabled">
-                    <span>上一页</span>
-                </div>
-                <div class="page-item active">
-                    <span>1</span>
-                </div>
-                <div class="page-item">
-                    <span>2</span>
-                </div>
-                <div class="page-item">
-                    <span>3</span>
-                </div>
-                <div class="page-item">
-                    <span>4</span>
-                </div>
-                <div class="page-item">
-                    <span>5</span>
-                </div>
-                <div class="page-item">
-                    <span>下一页</span>
-                </div>
+            <div class="pagination" id="pagination">
+                <!-- 分页按钮动态生成 -->
             </div>
         </div>
     </div>
@@ -251,6 +219,7 @@
     </div>
 </footer>
 
+<!-- 使用Thymeleaf语法引用JS -->
 <script th:src="@{/js/search.js}"></script>
 </body>
 </html>
